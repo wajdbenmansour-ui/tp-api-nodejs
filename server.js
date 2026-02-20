@@ -33,7 +33,7 @@ app.use(express.json());
 // ============================================
 
 // Route d'accueil - pour tester que le serveur fonctionne
-app.get('/', (req, res) => {
+/***app.get('/', (req, res) => {
     res.json({
         message: '🎓 Bienvenue sur l\'API de gestion des étudiants! ',
         version: '1.0.0',
@@ -45,6 +45,15 @@ app.get('/', (req, res) => {
             supprimerEtudiant: 'DELETE /api/etudiants/: id',
             parFiliere: 'GET /api/etudiants/filiere/: filiere'
         }
+    });
+});
+***/
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'OK',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime()
     });
 });
 
