@@ -46,8 +46,7 @@ app.use(express.json());
             parFiliere: 'GET /api/etudiants/filiere/: filiere'
         }
     });
-});
-***/
+});***/
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.status(200).json({
@@ -89,3 +88,4 @@ app.listen(PORT, () => {
     `);
 });
 
+"// TODO: ajouter la documentation" 
